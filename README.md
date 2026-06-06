@@ -1,6 +1,6 @@
 # quant-backtests
 
-What's up nerds? Here are baby's first two exploratory trading-strategy backtests on equities and crypto, built with
+What's up nerds! Here are baby's first two exploratory trading-strategy backtests on equities and crypto, built with
 `pandas` + `yfinance`:
 
 1. **Risk-On vs Risk-Off pairs trade** — a z-score mean-reversion strategy on

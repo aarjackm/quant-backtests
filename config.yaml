@@ -1,0 +1,24 @@
+# ============================================================================
+# Strategy configuration. Edit these values to re-run the backtests with
+# different universes, date ranges, or risk parameters — no code changes needed.
+# Consumed by run.py and the notebook in notebooks/.
+# ============================================================================
+
+# Part A — Risk-On vs Risk-Off pairs trade (z-score mean reversion)
+pairs_trade:
+  long_tickers:  [ARKK, COIN, TSLA, NVDA]   # risk-on basket (high beta / growth)
+  short_tickers: [XLP, XLU, TLT, GLD]        # risk-off basket (defensives / bonds / gold)
+  start: "2023-01-01"
+  end:   null            # null = today
+  entry_z: 2.0           # enter when |z-score| exceeds this
+  exit_z:  0.5           # exit when |z-score| falls back inside this
+
+# Part B — Multi-timeframe trend-following breakout on high-beta stocks
+breakout:
+  tickers: [NVDA, AMD, META, SHOP, TSLA]
+  start: "2023-01-01"
+  end:   "2025-07-01"
+  atr_period:    14      # lookback for Average True Range
+  atr_tp_mult:   2.0     # take-profit = entry + this * ATR
+  atr_sl_mult:   1.0     # stop-loss   = entry - this * ATR
+  max_hold_bars: 10      # time-stop: exit after this many bars

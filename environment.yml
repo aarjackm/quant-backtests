@@ -1,0 +1,20 @@
+# Conda environment for the quant-backtests repo.
+#   conda env create -f environment.yml
+#   conda activate quant-backtests
+#
+# Prefer pip + venv? See requirements.txt instead:
+#   python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
+name: quant-backtests
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - pyyaml
+  - pytest
+  - pip
+  - pip:
+      - yfinance
